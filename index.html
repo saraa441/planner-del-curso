@@ -1,0 +1,302 @@
+<!DOCTYPE html> <!-- Se indica que el archivo es tipo html -->
+
+<html lang ="es"> <!-- Se indica que la página web está en español -->
+
+<head>
+	
+	<meta charset = "UTF-8"> <!-- Se pone esto para que la página web entienda los caracteres especiales -->
+	<title> Planner del Curso </title> <!-- Se crea el titulo que aparecera en el navegador al abrir la página web -->
+	<link rel="stylesheet" href="estilo.css"> <!-- Se llama al documento que tiene el estilo de la página web -->
+
+</head>
+
+<body>
+	
+	<header>
+		
+		<h1 id="titulo">Planner del Curso</h1>
+	
+	</header>
+	
+	<main>
+		
+		<!-- Menú principal -->
+		<div class="menu" id="menuPrincipal"> 
+			
+			<button id="btnEstudio">Plan de estudio</button>
+			<button id="btnCalculadora">Calculadora de nota media</button>
+		
+		</div>
+		
+		<!-- PLAN DE ESTUDIO -->
+		<section id="planEstudio">	
+			
+			<h2>Plan de Estudio</h2>
+			
+			<!-- BOTÓN DE CONFIGURACIÓN -->
+			<button id= "btnConfiguracion">⚙️</button>
+			
+			<!-- SECCIÓN DE CONFIGURACIÓN -->
+			<section id="configuracion">
+				<h2>Configuración</h2>
+				<div class="opcionConfiguracion">
+					<label>Color de fondo</label>
+					<input id="colorFondo" type="color">
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Color de botones</label>
+					<input id="colorBotones" type="color">
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Tipo de letra</label>
+					<select id="tipoLetra">
+						<option>Arial</option>
+						<option>Verdana</option>
+						<option>Georgia</option>
+						<option>Times New Roman</option>
+					</select>
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Tamaño de letra</label>
+					<select id="tamanoLetra">
+						<option>Pequeño</option>
+						<option>Normal</option>
+						<option>Grande</option>
+						<option>Muy grande</option>
+					</select>
+				</div>
+				
+				<div class="opcionConfiguracion"> 
+					<label>Estilo de las esquinas</label> 
+					<select id="estiloEsquinas"> 
+						<option>Sin redondeo</option> 
+						<option>Poco redondeadas</option> 
+						<option>Redondeadas</option> 
+						<option>Muy redondeadas</option> 
+					</select> 
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Color de los cuadros</label>
+					<input id="colorCuadros" type="color">
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Color de los bloques de estudio</label>
+					<input id="colorEstudio" type="color">
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Color de los bloques de descanso</label>
+					<input id="colorDescanso" type="color">
+				</div>
+				
+				<div class="opcionConfiguracion">
+					<label>Color de los bloques de tareas</label>
+					<input id="colorTareas" type="color">
+				</div>
+				
+			</section>
+			
+			<!-- DURACIONES -->
+			<div class="filaConfiguracion">
+			
+				<div>
+				
+					<h3>Duración de los descansos
+						<div class="contenedorInfo">
+							<button class="btnInfo" data-info="descansos">ⓘ</button>
+					
+							<div id="descansos" class="infoAsignaturas">
+								Escribe el tiempo que desas que duren los descansos
+							</div>
+						</div>
+					</h3>
+					
+					<input type="number" id="txtDuracionDescanso" min="1" placeholder="Minutos">
+				
+				</div>
+				
+				
+				<div>
+				
+					<h3>Duración del estudio
+						<div class="contenedorInfo">
+							<button class="btnInfo" data-info="estudio">ⓘ</button>
+					
+							<div id="estudio" class="infoAsignaturas">
+								Escribe el tiempo que desas que duren los bloques de estudio
+							</div>
+						</div>
+					</h3>
+					
+					<input type="number" id="txtDuracionEstudio" min="1" placeholder="Minutos">
+				
+				</div>
+			
+			</div>
+			
+			
+			<!-- TAREAS COMO DESCANSOS -->
+			<h3>¿Quieres usar las tareas como descansos?
+				<div class="contenedorInfo">
+					<button class="btnInfo" data-info="tareasDescansos">ⓘ</button>
+			
+					<div id="tareasDescansos" class="infoAsignaturas">
+						Marca la casilla si deseas que las tareas sustituyan a los descansos en el horario
+					</div>
+				</div>
+			</h3>
+			
+			<label>
+				<input type="checkbox" id="chkTareasComoDescanso">
+				Sí, usar las tareas como descansos
+			</label>
+			
+			
+			<!-- ASIGNATURAS -->
+			<h3>Asignaturas
+				<div class="contenedorInfo">
+					<button class="btnInfo" data-info="asignaturas">ⓘ</button>
+			
+					<div id="asignaturas" class="infoAsignaturas">
+						Escribe las asignaturas de las que tengas tareas o que necesites estudiar
+					</div>
+				</div>
+			</h3>
+				
+			<div class="filaAsignatura">
+				
+				<input type="text" id="txtAsignatura" onkeydown="comprobarEnterAsignatura(event)" placeholder="Escribe una asignatura">
+				
+				<input type="checkbox" id="chkImportante" onkeydown="comprobarEnterAsignatura(event)">
+				<label for="chkImportante">Importante</label>
+				
+				<input type="checkbox" id="chkMasTiempo" onkeydown="comprobarEnterAsignatura(event)">
+				<label for="chkMasTiempo">Necesita más tiempo</label>
+				
+				<button id="btnAñadirAsignatura" class="btnAñadir">Añadir</button>
+			
+			</div>
+			
+			<div id="listaAsignaturas"></div>
+			
+			
+			<!-- TAREAS -->
+			<h3>Tareas
+				<div class="contenedorInfo">
+					<button class="btnInfo" data-info="tareas">ⓘ</button>
+			
+					<div id="tareas" class="infoAsignaturas">
+						Escribe las tareas que tengas que hacer no relacionadas con el instituto o la universidad
+					</div>
+				</div>
+			</h3>	
+			
+			<div class="filaAsignatura">
+			
+				<input type="text" id="txtTarea" onkeydown="comprobarEnterTarea(event)" placeholder="Escribe una tarea">
+				
+				<input type="number" id="txtDuracionTarea" onkeydown="comprobarEnterTarea(event)" min="1" placeholder="Minutos">
+				
+				<button id="btnAñadirTarea" class="btnAñadir">Añadir</button>
+			
+			</div>
+			
+			<div id="listaTareas"></div>
+			
+			
+			<!-- EXÁMENES -->
+			<h3>Examenes
+				<div class="contenedorInfo">
+					<button class="btnInfo" data-info="examenes">ⓘ</button>
+			
+					<div id="examenes" class="infoAsignaturas">
+						Escribe los examenes que tengas y su fecha
+					</div>
+				</div>
+			</h3>	
+			
+			<input type="text" id="txtExamen" onkeydown="comprobarEnterExamen(event)" placeholder="Escribe una asignatura">
+			
+			<input type="date" id="txtFecha" onkeydown="comprobarEnterExamen(event)">
+			
+			<button id="btnAñadirExamen" class="btnAñadir">Añadir</button>
+			
+			<div id="listaExamenes"></div>
+			
+			
+			<!-- HORAS -->
+			<div class="filaConfiguracion">
+			
+				<div>
+				
+					<h3>Hora de inicio
+						<div class="contenedorInfo">
+							<button class="btnInfo" data-info="inicio">ⓘ</button>
+					
+							<div id="inicio" class="infoAsignaturas">
+								Escribe la hora a la que desea empezar
+							</div>
+						</div>
+					</h3>
+					
+					<input type="time" id="txtHoraInicio">
+				
+				</div>
+				
+				
+				<div>
+				
+					<h3>Hora de fin
+						<div class="contenedorInfo">
+							<button class="btnInfo" data-info="fin">ⓘ</button>
+					
+							<div id="fin" class="infoAsignaturas">
+								Escribe la hora a la que desea acabar
+							</div>
+						</div>
+					</h3>
+					
+					<input type="time" id="txtHoraFin">
+				
+				</div>
+			
+			</div>
+			
+			
+			<!-- CREAR PLAN -->
+			<button id="btnCrearPlan" class="btnAñadir">
+				Crear plan de estudio
+			</button>
+			
+			
+			<!-- VOLVER AL INICIO -->
+			<button class="btnVolver" id="btnInicioEstudio">
+				Volver al inicio
+			</button>
+			
+		</section>
+		
+		
+		<!-- CALCULADORA -->
+		<section id="Calculadora">
+			
+			<h2>Calculadora de nota media</h2>
+			
+			<button class="btnInicio" id="btnInicioCalculadora">
+				Volver al inicio
+			</button>
+		
+		</section>	
+	
+	</main>
+	
+	<script src="script.js"></script>
+
+</body>
+
+</html>
