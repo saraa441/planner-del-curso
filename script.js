@@ -20,6 +20,11 @@ const Calculadora = document.getElementById("Calculadora");
 const btnInicioEstudio = document.getElementById("btnInicioEstudio");
 const btnInicioCalculadora = document.getElementById("btnInicioCalculadora");
 
+// Botón de configuración //
+const btnConfiguracion = document.getElementById("btnConfiguracion");
+
+// Configuración //
+const configuracion = document.getElementById("configuracion");
 
 // ===============================
 // ASIGNATURAS
@@ -1316,7 +1321,33 @@ function crearPlan() {
 	);
 }
 
+// ==========================================
+// BOTÓN DE CONFIGURACIÓN
+// ==========================================
 
+btnConfiguracion.onclick = function() {
+	
+	if (
+		configuracion.style.display === "none"
+	) {
+		configuracion.style.display = "block";
+	}
+	else {
+		configuracion.style.display = "none";
+	}
+};
+
+document.addEventListener("click", function(event) {
+
+	if (
+		configuracion.style.display === "block" &&
+		!configuracion.contains(event.target) &&
+		event.target !== btnConfiguracion
+	) {
+
+		configuracion.style.display = "none";
+	}
+});
 
 // ==========================================
 // BOTONES DEL MENÚ
