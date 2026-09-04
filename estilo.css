@@ -303,3 +303,9 @@ button:hover{
     gap: 5px;
     margin-left: 25px;
 }
+
+#btnIniciar {
+    display: block;
+    width: 50%;
+    margin: 10px auto 0;
+}
