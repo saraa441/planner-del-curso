@@ -1,46 +1,48 @@
-/*Estilo del fondo de la página web */
+/* Estilo del fondo de la página web */
 body{
 	background-color: #9CC9F5;
 }
 
-/* Se cambia todo lo que en el código principal este en el h1 */
+/* Se cambia todo lo que en el código principal esté en el h1 y h2 */
 h1, h2{
 	text-align: center;
 }
 
-/* Se cambia todo lo que en el código principal este en el div con la clase menu */
+/* Se cambia todo lo que en el código principal esté en el div con la clase menu */
 .menu{
 	background-color: white;
 	width: 445px;
 	margin: auto;
 	border-radius: 20px;
 	padding: 20px;
+	position: relative;
+	box-sizing: border-box;
 }
 
-/* Se hace que el recuadro de texto y el botón esten en la misma fila pero con un espacio entre ellos */
+/* Se hace que el recuadro de texto y el botón estén en la misma fila */
 .filaAsignatura{
 	display: flex;
-	gap : 35px;
+	gap: 35px;
 }
 
-/* Se colocan dos configuraciones una al lado de la otra, juntas y a la izquierda */
+/* Se colocan dos configuraciones una al lado de la otra */
 .filaConfiguracion{
 	display: flex;
 	justify-content: flex-start;
 	gap: 20px;
 }
 
-/* Se hace que la lista de asignaturas, tareas y examenes aparezca con una X al lado para poder eliminar cada contenido de la lista según se desee */
+/* Se hace que las listas tengan una X al lado */
 .filaLista{
 	display: flex;
 	justify-content: space-between;
-	border-bottom: 1px solid black;	
+	border-bottom: 1px solid black;
 }
 
-/* Se cambia el tamaño de los botones añadir para que queden mejor colocados respecto al cuadro de texto */
+/* Se cambia el tamaño de los botones añadir */
 .btnAñadir{
 	padding: 8px 15px;
-	width: auto;	
+	width: auto;
 }
 
 /* Se centra el botón de crear el plan */
@@ -61,12 +63,21 @@ h1, h2{
 	margin: 0;
 }
 
-/* Se quita la linea que sale abajo de la última fila */
+#asignaturasGuardadas .filaAsignatura{
+	background-color: #f2f2f2;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* Se quita la línea de la última fila */
 .filaLista:last-child{
 	border-bottom: none;
 }
 
-/* Se cambia el fondo que queda detras de la X */
+/* Se cambia el fondo que queda detrás de la X */
 .btnEliminar:hover{
 	background-color: #EAEAEA;
 	border-radius: 50%;
@@ -86,7 +97,7 @@ h1, h2{
 	background-color: #D8B4E2;
 }
 
-/* Se crea un cuadro para guardar el descasno */
+/* Se crea un cuadro para guardar el descanso */
 .bloqueDescanso{
 	border: 1px solid black;
 	padding: 5px;
@@ -110,7 +121,7 @@ h1, h2{
 	box-sizing: border-box;
 }
 
-/* Se crea el boton de informacion */
+/* Se crea el botón de información */
 .btnInfo{
 	width: auto;
 	padding: 0;
@@ -118,6 +129,7 @@ h1, h2{
 	background-color: white;
 }
 
+/* Información que aparece al pulsar el botón */
 .infoAsignaturas{
 	display: none;
 	position: absolute;
@@ -130,20 +142,22 @@ h1, h2{
 	padding: 10px;
 }
 
+/* Contenedor de la información */
 .contenedorInfo{
 	position: relative;
 	display: inline-block;
 }
 
+/* Opciones de configuración */
 .opcionConfiguracion{
 	display: flex;
 	justify-content: flex-start;
-	gap:20px;
+	gap: 20px;
 	align-items: center;
 	margin-bottom: 15px;
 }
 
-/* Se cambia todo lo que en el código principal este en el button */
+/* Se cambia todo lo que en el código principal esté en el button */
 button{
 	width: 100%;
 	padding: 15px;
@@ -155,7 +169,7 @@ button{
 	transition: 0.3s;
 }
 
-/* Se cambia todo lo que en el código principal esta en el section */
+/* Se cambia todo lo que en el código principal esté en el section */
 section{
 	background-color: white;
 	width: 80%;
@@ -177,7 +191,8 @@ button:hover{
 }
 
 #Calculadora{
-	display: none; 
+	display: none;
+	position: relative;
 }
 
 /* Se hace un recuadro para las listas */
@@ -196,21 +211,61 @@ button:hover{
 	margin-top: 10px;
 }
 
-#btnConfiguracion{
+
+/* ==========================================
+   BOTONES DE CONFIGURACIÓN
+   ========================================== */
+
+/* Botón de configuración del inicio */
+#btnConfiguracionInicio{
 	position: absolute;
 	top: 10px;
 	right: 10px;
 	width: auto;
+	margin: 0;
+	padding: 10px;
 	background-color: white;
 	cursor: pointer;
 	transition: 0.3s;
 }
 
-#btnConfiguracion:hover{
+/* Botón de configuración del plan de estudio */
+#btnConfiguracionEstudio{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: auto;
+	margin: 0;
+	padding: 10px;
+	background-color: white;
+	cursor: pointer;
+}
+
+/* Botón de configuración de la calculadora */
+#btnConfiguracionCalculadora{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: auto;
+	margin: 0;
+	padding: 10px;
+	background-color: white;
+	cursor: pointer;
+}
+
+/* Efecto al pasar el ratón por encima */
+#btnConfiguracionInicio:hover,
+#btnConfiguracionEstudio:hover,
+#btnConfiguracionCalculadora:hover{
 	background-color: #4D8FD8;
 }
 
-#configuracion {
+
+/* ==========================================
+   VENTANA DE CONFIGURACIÓN
+   ========================================== */
+
+#configuracion{
 	position: fixed;
 	top: 50%;
 	left: 50%;
@@ -223,4 +278,28 @@ button:hover{
 	width: 300px;
 	max-height: 80vh;
 	overflow-y: auto;
+}
+
+
+/* ==========================================
+   PANTALLAS DE LA CALCULADORA
+   ========================================== */
+
+#pantallaConfiguracion{
+	display: block;
+}
+
+#pantallaCalculo{
+	display: none;
+}
+
+#menuPrincipal{
+	padding-top: 60px;
+}
+
+.zonaNotas {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 25px;
 }
