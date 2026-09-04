@@ -20,14 +20,87 @@
 	</header>
 	
 	<main>
+	
+		<!-- SECCIÓN DE CONFIGURACIÓN -->
+		<section id="configuracion" style="display: none;">
+		
+			<h2>Configuración</h2>
+			
+			<div class="opcionConfiguracion">
+				<label>Color de fondo</label>
+				<input id="colorFondo" type="color">
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Color de botones</label>
+				<input id="colorBotones" type="color">
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Tipo de letra</label>
+				<select id="tipoLetra">
+					<option>Arial</option>
+					<option>Verdana</option>
+					<option>Georgia</option>
+					<option>Times New Roman</option>
+				</select>
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Tamaño de letra</label>
+				<select id="tamanoLetra">
+					<option>Pequeño</option>
+					<option>Normal</option>
+					<option>Grande</option>
+					<option>Muy grande</option>
+				</select>
+			</div>
+			
+			<div class="opcionConfiguracion"> 
+				<label>Estilo de las esquinas</label> 
+				<select id="estiloEsquinas"> 
+					<option>Sin redondeo</option> 
+					<option>Poco redondeadas</option> 
+					<option>Redondeadas</option> 
+					<option>Muy redondeadas</option> 
+				</select> 
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Color de los cuadros</label>
+				<input id="colorCuadros" type="color">
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Color de los bloques de estudio</label>
+				<input id="colorEstudio" type="color">
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Color de los bloques de descanso</label>
+				<input id="colorDescanso" type="color">
+			</div>
+			
+			<div class="opcionConfiguracion">
+				<label>Color de los bloques de tareas</label>
+				<input id="colorTareas" type="color">
+			</div>
+			
+		</section>
+		
 		
 		<!-- Menú principal -->
 		<div class="menu" id="menuPrincipal"> 
-			
+		
+			<!-- BOTÓN DE CONFIGURACIÓN -->
+			<button id="btnConfiguracionInicio">⚙️</button>
+		
+			<!-- BOTONES DE LAS DISTINTAS SECCIONES -->
 			<button id="btnEstudio">Plan de estudio</button>
 			<button id="btnCalculadora">Calculadora de nota media</button>
 		
 		</div>
+		
 		
 		<!-- PLAN DE ESTUDIO -->
 		<section id="planEstudio">	
@@ -35,73 +108,8 @@
 			<h2>Plan de Estudio</h2>
 			
 			<!-- BOTÓN DE CONFIGURACIÓN -->
-			<button id= "btnConfiguracion">⚙️</button>
+			<button id="btnConfiguracionEstudio">⚙️</button>
 			
-			<!-- SECCIÓN DE CONFIGURACIÓN -->
-			<section id="configuracion" style="display: none;">
-			
-				<h2>Configuración</h2>
-				<div class="opcionConfiguracion">
-					<label>Color de fondo</label>
-					<input id="colorFondo" type="color">
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Color de botones</label>
-					<input id="colorBotones" type="color">
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Tipo de letra</label>
-					<select id="tipoLetra">
-						<option>Arial</option>
-						<option>Verdana</option>
-						<option>Georgia</option>
-						<option>Times New Roman</option>
-					</select>
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Tamaño de letra</label>
-					<select id="tamanoLetra">
-						<option>Pequeño</option>
-						<option>Normal</option>
-						<option>Grande</option>
-						<option>Muy grande</option>
-					</select>
-				</div>
-				
-				<div class="opcionConfiguracion"> 
-					<label>Estilo de las esquinas</label> 
-					<select id="estiloEsquinas"> 
-						<option>Sin redondeo</option> 
-						<option>Poco redondeadas</option> 
-						<option>Redondeadas</option> 
-						<option>Muy redondeadas</option> 
-					</select> 
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Color de los cuadros</label>
-					<input id="colorCuadros" type="color">
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Color de los bloques de estudio</label>
-					<input id="colorEstudio" type="color">
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Color de los bloques de descanso</label>
-					<input id="colorDescanso" type="color">
-				</div>
-				
-				<div class="opcionConfiguracion">
-					<label>Color de los bloques de tareas</label>
-					<input id="colorTareas" type="color">
-				</div>
-				
-			</section>
 			
 			<!-- DURACIONES -->
 			<div class="filaConfiguracion">
@@ -286,8 +294,68 @@
 		
 		<!-- CALCULADORA -->
 		<section id="Calculadora">
-			
+					
 			<h2>Calculadora de nota media</h2>
+			
+			<!-- BOTÓN DE CONFIGURACIÓN -->
+			<button id="btnConfiguracionCalculadora">⚙️</button>
+			
+			<!-- PANTALLA 1 -->
+			<div id="pantallaConfiguracion">
+					<h2>Configuración de asignaturas</h2>
+				<div id="asignaturasGuardadas"></div>
+
+				<h3>Asignatura</h3>
+				<input type="text" id="txtAsignaturaConfiguracion">
+				<div id="divisionesGuardadas"></div>
+			
+				<h3>¿Cómo se divide la nota?</h3>
+				<div id="listaDivisiones">
+					<div class="filaDivision">
+						<input type="text" id="txtDivisionNota" class="divisionNota">
+						<input type="number" id="porcDivision" min="0" max="100">
+					</div>
+				</div>
+			
+				<h3>¿Algún subapartado?</h3>
+				<div id="listaSubapartados">
+					<div class="filaSubapartado">
+						<input type="text" id="txtSubapartado" class="subapartadoNota">
+						<input type="number" id="porcSubapartado" min="0" max="100">
+					</div>
+				</div>
+						
+				<button id="btnAñadirDivisiones" class="btnAñadir">Añadir divisiones y subapartados</button>
+				<button id="btnAñadirAsignaturas" class="btnAñadir">Guardar asignatura</button>
+				<button id="btnIniciar" class="btnAñadir">Iniciar calculadora</button>
+			</div>
+			
+			<!--PANTALLA 2 -->
+			<div id="pantallaCalculo">
+				<h2>Pantalla de cálculo</h2>
+				
+				<select id="selectAsignatura">
+					<option value="">Selecciona una asignatura</option>
+				</select>
+				
+				<div id="elementosAsignatura"></div>
+				
+				<button id="btnVolverConfiguracion" class="btnAñadir">
+					Volver a configuración
+				</button>
+				
+				<button id="btnCalcular" class="btnAñadir">
+					Calcular
+				</button>
+				
+				<label>
+					<input type="checkbox" id="chkProcedimiento">
+					Mostrar procedimiento
+				</label>
+
+				<div id="resultadoCalculadora"></div>
+				
+			</div>
 			
 			<button class="btnInicio" id="btnInicioCalculadora">
 				Volver al inicio
