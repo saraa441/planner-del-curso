@@ -86,6 +86,11 @@
 				<input id="colorTareas" type="color">
 			</div>
 			
+			<!-- VOLVER AL INICIO -->
+			<button class="btnVolver" id="btnInicioConfiguracion">
+				Volver al inicio
+			</button>
+			
 		</section>
 		
 		
@@ -98,6 +103,7 @@
 			<!-- BOTONES DE LAS DISTINTAS SECCIONES -->
 			<button id="btnEstudio">Plan de estudio</button>
 			<button id="btnCalculadora">Calculadora de nota media</button>
+			<button id="btnCalendario">Calendario</button>
 		
 		</div>
 		
@@ -105,11 +111,7 @@
 		<!-- PLAN DE ESTUDIO -->
 		<section id="planEstudio">	
 			
-			<h2>Plan de Estudio</h2>
-			
-			<!-- BOTÓN DE CONFIGURACIÓN -->
-			<button id="btnConfiguracionEstudio">⚙️</button>
-			
+			<h2>Plan de Estudio</h2>		
 			
 			<!-- DURACIONES -->
 			<div class="filaConfiguracion">
@@ -297,9 +299,6 @@
 					
 			<h2>Calculadora de nota media</h2>
 			
-			<!-- BOTÓN DE CONFIGURACIÓN -->
-			<button id="btnConfiguracionCalculadora">⚙️</button>
-			
 			<!-- PANTALLA 1 -->
 			<div id="pantallaConfiguracion">
 					<h2>Configuración de asignaturas</h2>
@@ -361,7 +360,99 @@
 				Volver al inicio
 			</button>
 		
-		</section>	
+		</section>
+
+		<!-- CALENDARIO -->
+		<section id="Calendario">
+
+			<h2>Mi calendario</h2>
+			
+			<div id="calendarioMensual">
+		
+				<!-- CABECERA DEL CALENDARIO -->
+				<div id="cabeceraCalendario">
+        
+					<button id="btnMesAnterior">←</button>
+            
+					<h3 id="mesActual"></h3>
+            
+					<button id="btnMesSiguiente">→</button>
+
+				</div>
+
+				<!-- DÍAS DE LA SEMANA -->
+				<div id="diasSemana"></div>
+
+				<!-- CASILLAS DE LOS DÍAS -->
+				<div id="diasCalendario"></div>
+
+			</div>
+			
+			<!-- VENTANA DEL DÍA -->
+			<div id="ventanaDia">
+
+				<h3 id="tituloDia"></h3>
+				<div id="listaDia"></div>
+				<div id="botonesDia">
+					<button id="btnAñadirDia">Añadir</button>
+					<button id="btnCerrarDia">Cerrar</button>
+				</div>
+				
+				<!-- FORMULARIO PARA AÑADIR -->
+				<div id="formularioDia">
+
+					<h3>Añadir elemento</h3>
+					
+					<label for="txtElementoDia">¿Qué quieres apuntar?</label>
+
+					<div id="contenedorEmoji">
+
+						<input type="text" id="txtElementoDia">
+						<button type="button" id="btnEmoji">🙂</button>
+
+					</div>
+
+					<div id="menuEmojis">
+
+						<button type="button">📚</button>
+						<button type="button">📝</button>
+						<button type="button">📅</button>
+						<button type="button">⏰</button>
+						<button type="button">🎓</button>
+						<button type="button">🏋️</button>
+						<button type="button">💻</button>
+						<button type="button">🔧</button>
+						<button type="button">📖</button>
+						<button type="button">🧪</button>
+						<button type="button">🎯</button>
+						<button type="button">⭐</button>
+						<button type="button">❗</button>
+						<button type="button">❤️</button>
+
+					</div>
+					
+					<label for="colorElementoDia">Color del subrayado:</label>
+					<input type="color" id="colorElementoDia">
+					
+					<label for="horaInicioElemento">Hora de inicio:</label>
+					<input type="time" id="horaInicioElemento">
+
+					<label for="horaFinElemento">Hora de fin:</label>
+					<input type="time" id="horaFinElemento">
+										
+					<button id="btnGuardarElemento">Guardar</button>
+					<button id="btnCancelarElemento">Cancelar</button>
+
+				</div>
+
+			</div>
+
+			<!-- VOLVER AL INICIO -->
+			<button class="btnVolver" id="btnInicioCalendario">
+				Volver al inicio
+			</button>
+
+		</section>
 	
 	</main>
 	
