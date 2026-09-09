@@ -1,3 +1,7 @@
+/* ==========================================
+   ESTILO GENERAL
+   ========================================== */
+
 /* Estilo del fondo de la página web */
 body{
 	background-color: #9CC9F5;
@@ -17,26 +21,6 @@ h1, h2{
 	padding: 20px;
 	position: relative;
 	box-sizing: border-box;
-}
-
-/* Se hace que el recuadro de texto y el botón estén en la misma fila */
-.filaAsignatura{
-	display: flex;
-	gap: 35px;
-}
-
-/* Se colocan dos configuraciones una al lado de la otra */
-.filaConfiguracion{
-	display: flex;
-	justify-content: flex-start;
-	gap: 20px;
-}
-
-/* Se hace que las listas tengan una X al lado */
-.filaLista{
-	display: flex;
-	justify-content: space-between;
-	border-bottom: 1px solid black;
 }
 
 /* Se cambia el tamaño de los botones añadir */
@@ -63,15 +47,6 @@ h1, h2{
 	margin: 0;
 }
 
-#asignaturasGuardadas .filaAsignatura{
-	background-color: #f2f2f2;
-	padding: 10px;
-	margin-top: 10px;
-	border-radius: 10px;
-	align-items: center;
-	justify-content: space-between;
-}
-
 /* Se quita la línea de la última fila */
 .filaLista:last-child{
 	border-bottom: none;
@@ -85,30 +60,11 @@ h1, h2{
 
 /* Se cambia el estilo del botón de volver al inicio */
 .btnVolver{
-	width: 30%;
+	width: auto;
 	display: block;
 	margin-left: auto;
-}
-
-/* Se crea un cuadro para guardar la asignatura */
-.bloqueEstudio{
-	border: 1px solid black;
-	padding: 5px;
-	background-color: #D8B4E2;
-}
-
-/* Se crea un cuadro para guardar el descanso */
-.bloqueDescanso{
-	border: 1px solid black;
-	padding: 5px;
-	background-color: #FFF2B2;
-}
-
-/* Se crea un cuadro para guardar la tarea */
-.bloqueTarea{
-	border: 1px solid black;
-	padding: 5px;
-	background-color: #B7E4C7;
+	margin-top: 10px;
+	padding: 10px 20px;
 }
 
 /* Se crea el cuadro blanco que contiene el horario */
@@ -148,15 +104,6 @@ h1, h2{
 	display: inline-block;
 }
 
-/* Opciones de configuración */
-.opcionConfiguracion{
-	display: flex;
-	justify-content: flex-start;
-	gap: 20px;
-	align-items: center;
-	margin-bottom: 15px;
-}
-
 /* Se cambia todo lo que en el código principal esté en el button */
 button{
 	width: 100%;
@@ -177,6 +124,7 @@ section{
 	border-radius: 20px;
 	padding: 20px;
 	box-sizing: border-box;
+	position: relative;
 }
 
 /* Se pone un efecto al pasar el ratón por encima de los botones */
@@ -194,23 +142,6 @@ button:hover{
 	display: none;
 	position: relative;
 }
-
-/* Se hace un recuadro para las listas */
-#listaAsignaturas{
-	border: 1px solid black;
-	margin-top: 10px;
-}
-
-#listaTareas{
-	border: 1px solid black;
-	margin-top: 10px;
-}
-
-#listaExamenes{
-	border: 1px solid black;
-	margin-top: 10px;
-}
-
 
 /* ==========================================
    BOTONES DE CONFIGURACIÓN
@@ -253,23 +184,10 @@ button:hover{
 	cursor: pointer;
 }
 
-/* Botón de configuración del calendario */
-#btnConfiguracionCalendario{
-	position: absolute;
-	top: 10px;
-	right: 10px;
-	width: auto;
-	margin: 0;
-	padding: 10px;
-	background-color: white;
-	cursor: pointer;
-}
-
 /* Efecto al pasar el ratón por encima */
 #btnConfiguracionInicio:hover,
 #btnConfiguracionEstudio:hover,
-#btnConfiguracionCalculadora:hover,
-#btnConfiguracionCalendario:hover{
+#btnConfiguracionCalculadora:hover{
 	background-color: #4D8FD8;
 }
 
@@ -295,227 +213,22 @@ button:hover{
 
 
 /* ==========================================
-   PANTALLAS DE LA CALCULADORA
+   MENÚ PRINCIPAL
    ========================================== */
-
-#pantallaConfiguracion{
-	display: block;
-}
-
-#pantallaCalculo{
-	display: none;
-}
 
 #menuPrincipal{
 	padding-top: 60px;
 }
 
-.zonaNotas {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    margin-left: 25px;
-}
-
-#btnIniciar {
-    display: block;
-    width: 50%;
-    margin: 10px auto 0;
-}
-
-
-/* ==========================================
-   CALENDARIO
-   ========================================== */
-
-/* Cuadro que contiene todo el calendario */
-#calendarioMensual{
-	background-color: white;
-	width: 100%;
-	margin: 20px auto;
-	padding: 20px;
-	box-sizing: border-box;
-	border: 1px solid black;
-	border-radius: 15px;
-	position: static;
-}
-
-#Calendario{
-	position: relative;
-}
-
-/* Cabecera del calendario */
-#cabeceraCalendario{
+.zonaNotas{
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 20px;
-}
-
-/* Título del mes */
-#mesActual{
-	margin: 0;
-	text-align: center;
-}
-
-/* Botones para cambiar de mes */
-#btnMesAnterior,
-#btnMesSiguiente{
-	width: auto;
-	margin: 0;
-	padding: 10px 20px;
-}
-
-/* Días de la semana */
-#diasSemana{
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
+	flex-direction: column;
 	gap: 5px;
-	margin-top: 20px;
+	margin-left: 25px;
 }
 
-#diasSemana div{
-	text-align: center;
-	font-weight: bold;
-	padding: 10px;
-}
-
-/* Cuadrícula de los días */
-#diasCalendario{
-	display: grid;
-	grid-template-columns: repeat(7, 1fr);
-	gap: 5px;
-	margin-top: 5px;
-}
-
-/* Cada día */
-#diasCalendario > div{
-	min-height: 80px;
-	border: 1px solid black;
-	padding: 8px;
-	box-sizing: border-box;
-}
-
-/* ==========================================
-   VENTANA DEL DÍA
-   ========================================== */
-
-#ventanaDia{
-	display: none;
-	position: fixed;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	background-color: white;
-	width: 90%;
-	max-width: 500px;
-	min-height: 300px;
-	padding: 25px;
-	box-sizing: border-box;
-	border: 1px solid black;
-	border-radius: 15px;
-	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-	z-index: 1000;
-}
-
-#tituloDia{
-	margin-top: 0;
-	text-align: center;
-}
-
-#listaDia{
-	min-height: 150px;
-	margin-bottom: 20px;
-	overflow-y: auto;
-}
-
-#botonesDia{
-	display: flex;
-	justify-content: center;
-	gap: 10px;
-	margin-top: auto;
-}
-
-#botonesDia button{
-	width: auto;
-	margin: 0;
-	padding: 10px 20px;
-}
-
-/* FORMULARIO DEL DÍA */
-
-#formularioDia{
-	display: none;
-	margin-top: 20px;
-}
-
-#formularioDia h3{
-	margin-top: 0;
-}
-
-#txtElementoDia{
-	width: 100%;
-	padding: 10px;
-	box-sizing: border-box;
-	margin: 10px 0;
-}
-
-#tituloDia{
-	margin-top: 0;
-}
-
-#listaDia{
-	min-height: 50px;
-	margin-bottom: 20px;
-}
-
-#contenedorEmoji{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-#contenedorEmoji input{
-    flex: 1;
-}
-
-#btnEmoji{
-    width: auto;
-    margin: 0;
-    padding: 8px 10px;
-}
-
-#menuEmojis{
-    display: none;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: white;
-}
-
-#menuEmojis button{
-    width: auto;
-    margin: 3px;
-    padding: 5px 7px;
-    font-size: 20px;
-}
-
-/* Elementos del día del calendario */
-#listaDia > div {
-	display: flex;
-	align-items: center;
-	gap: 8px;
-	padding: 5px;
-}
-
-/* Texto y horario del elemento */
-#listaDia > div {
-	white-space: nowrap;
-}
-
-/* Botones de editar y eliminar */
-#listaDia > div button {
-	margin: 0;
-	padding: 4px 8px;
+#btnIniciar{
+	display: block;
+	width: 50%;
+	margin: 10px auto 0;
 }
