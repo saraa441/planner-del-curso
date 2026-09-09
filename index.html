@@ -1,416 +1,836 @@
 <!DOCTYPE html> <!-- Se indica que el archivo es tipo html -->
 
-<html lang ="es"> <!-- Se indica que la página web está en español -->
+<html lang="es"> <!-- Se indica que la página web está en español -->
 
 <head>
-	
-	<meta charset = "UTF-8"> <!-- Se pone esto para que la página web entienda los caracteres especiales -->
+
+	<meta charset="UTF-8"> <!-- Se pone esto para que la página web entienda los caracteres especiales -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Planner del Curso </title> <!-- Se crea el titulo que aparecera en el navegador al abrir la página web -->
+
+	<title>Planner del Curso</title> <!-- Se crea el título que aparecerá en el navegador -->
+
 	<link rel="stylesheet" href="estilo.css"> <!-- Se llama al documento que tiene el estilo de la página web -->
+	<link rel="stylesheet" href="planEstudio.css">
+	<link rel="stylesheet" href="calculadora.css">
+	<link rel="stylesheet" href="calendario.css">
+	<link rel="stylesheet" href="blocNotas.css">
 
 </head>
 
 <body>
-	
+
 	<header>
-		
+
 		<h1 id="titulo">Planner del Curso</h1>
-	
+
 	</header>
-	
+
+
 	<main>
-	
-		<!-- SECCIÓN DE CONFIGURACIÓN -->
+
+
+		<!-- ==========================================
+		     SECCIÓN DE CONFIGURACIÓN
+		     ========================================== -->
+
 		<section id="configuracion" style="display: none;">
-		
+
 			<h2>Configuración</h2>
-			
+
 			<div class="opcionConfiguracion">
+
 				<label>Color de fondo</label>
+
 				<input id="colorFondo" type="color">
+
 			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
 				<label>Color de botones</label>
+
 				<input id="colorBotones" type="color">
+
 			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
 				<label>Tipo de letra</label>
+
 				<select id="tipoLetra">
+
 					<option>Arial</option>
 					<option>Verdana</option>
 					<option>Georgia</option>
 					<option>Times New Roman</option>
+
 				</select>
+
 			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
 				<label>Tamaño de letra</label>
+
 				<select id="tamanoLetra">
+
 					<option>Pequeño</option>
 					<option>Normal</option>
 					<option>Grande</option>
 					<option>Muy grande</option>
+
 				</select>
+
 			</div>
-			
-			<div class="opcionConfiguracion"> 
-				<label>Estilo de las esquinas</label> 
-				<select id="estiloEsquinas"> 
-					<option>Sin redondeo</option> 
-					<option>Poco redondeadas</option> 
-					<option>Redondeadas</option> 
-					<option>Muy redondeadas</option> 
-				</select> 
-			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
+				<label>Estilo de las esquinas</label>
+
+				<select id="estiloEsquinas">
+
+					<option>Sin redondeo</option>
+					<option>Poco redondeadas</option>
+					<option>Redondeadas</option>
+					<option>Muy redondeadas</option>
+
+				</select>
+
+			</div>
+
+
+			<div class="opcionConfiguracion">
+
 				<label>Color de los cuadros</label>
+
 				<input id="colorCuadros" type="color">
+
 			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
 				<label>Color de los bloques de estudio</label>
+
 				<input id="colorEstudio" type="color">
+
 			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
 				<label>Color de los bloques de descanso</label>
+
 				<input id="colorDescanso" type="color">
+
 			</div>
-			
+
+
 			<div class="opcionConfiguracion">
+
 				<label>Color de los bloques de tareas</label>
+
 				<input id="colorTareas" type="color">
+
 			</div>
-			
-			<!-- VOLVER AL INICIO -->
-			<button class="btnVolver" id="btnInicioConfiguracion">
-				Volver al inicio
-			</button>
-			
+
 		</section>
-		
-		
-		<!-- Menú principal -->
-		<div class="menu" id="menuPrincipal"> 
-		
+
+
+
+		<!-- ==========================================
+		     MENÚ PRINCIPAL
+		     ========================================== -->
+
+		<div class="menu" id="menuPrincipal">
+
 			<!-- BOTÓN DE CONFIGURACIÓN -->
-			<button id="btnConfiguracionInicio">⚙️</button>
-		
+
+			<button id="btnConfiguracionInicio">
+				⚙️
+			</button>
+
+
 			<!-- BOTONES DE LAS DISTINTAS SECCIONES -->
-			<button id="btnEstudio">Plan de estudio</button>
-			<button id="btnCalculadora">Calculadora de nota media</button>
-			<button id="btnCalendario">Calendario</button>
-		
+
+			<button id="btnEstudio">
+				Plan de estudio
+			</button>
+
+			<button id="btnCalculadora">
+				Calculadora de nota media
+			</button>
+
+			<button id="btnCalendario">
+				Calendario
+			</button>
+
+			<button id="btnBlocNotas">
+				Bloc de notas
+			</button>
+
 		</div>
-		
-		
-		<!-- PLAN DE ESTUDIO -->
-		<section id="planEstudio">	
-			
-			<h2>Plan de Estudio</h2>		
-			
+
+
+
+		<!-- ==========================================
+		     PLAN DE ESTUDIO
+		     ========================================== -->
+
+		<section id="planEstudio">
+
+			<h2>Plan de Estudio</h2>
+
+
+			<!-- BOTÓN DE CONFIGURACIÓN -->
+
+			<button id="btnConfiguracionEstudio">
+				⚙️
+			</button>
+
+
+
 			<!-- DURACIONES -->
+
 			<div class="filaConfiguracion">
-			
+
+
 				<div>
-				
-					<h3>Duración de los descansos
+
+					<h3>
+
+						Duración de los descansos
+
 						<div class="contenedorInfo">
-							<button class="btnInfo" data-info="descansos">ⓘ</button>
-					
+
+							<button class="btnInfo" data-info="descansos">
+								ⓘ
+							</button>
+
 							<div id="descansos" class="infoAsignaturas">
-								Escribe el tiempo que desas que duren los descansos
+
+								Escribe el tiempo que deseas que duren los descansos
+
 							</div>
+
 						</div>
+
 					</h3>
-					
-					<input type="number" id="txtDuracionDescanso" min="1" placeholder="Minutos">
-				
+
+					<input
+						type="number"
+						id="txtDuracionDescanso"
+						min="1"
+						placeholder="Minutos"
+					>
+
 				</div>
-				
-				
+
+
+
 				<div>
-				
-					<h3>Duración del estudio
+
+					<h3>
+
+						Duración del estudio
+
 						<div class="contenedorInfo">
-							<button class="btnInfo" data-info="estudio">ⓘ</button>
-					
+
+							<button class="btnInfo" data-info="estudio">
+								ⓘ
+							</button>
+
 							<div id="estudio" class="infoAsignaturas">
-								Escribe el tiempo que desas que duren los bloques de estudio
+
+								Escribe el tiempo que deseas que duren los bloques de estudio
+
 							</div>
+
 						</div>
+
 					</h3>
-					
-					<input type="number" id="txtDuracionEstudio" min="1" placeholder="Minutos">
-				
+
+					<input
+						type="number"
+						id="txtDuracionEstudio"
+						min="1"
+						placeholder="Minutos"
+					>
+
 				</div>
-			
+
 			</div>
-			
-			
+
+
+
 			<!-- TAREAS COMO DESCANSOS -->
-			<h3>¿Quieres usar las tareas como descansos?
+
+			<h3>
+
+				¿Quieres usar las tareas como descansos?
+
 				<div class="contenedorInfo">
-					<button class="btnInfo" data-info="tareasDescansos">ⓘ</button>
-			
+
+					<button class="btnInfo" data-info="tareasDescansos">
+						ⓘ
+					</button>
+
 					<div id="tareasDescansos" class="infoAsignaturas">
+
 						Marca la casilla si deseas que las tareas sustituyan a los descansos en el horario
+
 					</div>
+
 				</div>
+
 			</h3>
-			
+
+
 			<label>
-				<input type="checkbox" id="chkTareasComoDescanso">
+
+				<input
+					type="checkbox"
+					id="chkTareasComoDescanso"
+				>
+
 				Sí, usar las tareas como descansos
+
 			</label>
-			
-			
+
+
+
 			<!-- ASIGNATURAS -->
-			<h3>Asignaturas
+
+			<h3>
+
+				Asignaturas
+
 				<div class="contenedorInfo">
-					<button class="btnInfo" data-info="asignaturas">ⓘ</button>
-			
+
+					<button class="btnInfo" data-info="asignaturas">
+						ⓘ
+					</button>
+
 					<div id="asignaturas" class="infoAsignaturas">
+
 						Escribe las asignaturas de las que tengas tareas o que necesites estudiar
+
 					</div>
+
 				</div>
+
 			</h3>
-				
+
+
 			<div class="filaAsignatura">
-				
-				<input type="text" id="txtAsignatura" onkeydown="comprobarEnterAsignatura(event)" placeholder="Escribe una asignatura">
-				
-				<input type="checkbox" id="chkImportante" onkeydown="comprobarEnterAsignatura(event)">
-				<label for="chkImportante">Importante</label>
-				
-				<input type="checkbox" id="chkMasTiempo" onkeydown="comprobarEnterAsignatura(event)">
-				<label for="chkMasTiempo">Necesita más tiempo</label>
-				
-				<button id="btnAñadirAsignatura" class="btnAñadir">Añadir</button>
-			
+
+				<input
+					type="text"
+					id="txtAsignatura"
+					onkeydown="comprobarEnterAsignatura(event)"
+					placeholder="Escribe una asignatura"
+				>
+
+				<input
+					type="checkbox"
+					id="chkImportante"
+				>
+
+				<label for="chkImportante">
+					Importante
+				</label>
+
+				<input
+					type="checkbox"
+					id="chkMasTiempo"
+				>
+
+				<label for="chkMasTiempo">
+					Necesita más tiempo
+				</label>
+
+				<button id="btnAñadirAsignatura" class="btnAñadir">
+					Añadir
+				</button>
+
 			</div>
-			
+
+
 			<div id="listaAsignaturas"></div>
-			
-			
+
+
+
 			<!-- TAREAS -->
-			<h3>Tareas
+
+			<h3>
+
+				Tareas
+
 				<div class="contenedorInfo">
-					<button class="btnInfo" data-info="tareas">ⓘ</button>
-			
+
+					<button class="btnInfo" data-info="tareas">
+						ⓘ
+					</button>
+
 					<div id="tareas" class="infoAsignaturas">
+
 						Escribe las tareas que tengas que hacer no relacionadas con el instituto o la universidad
+
 					</div>
+
 				</div>
-			</h3>	
-			
+
+			</h3>
+
+
 			<div class="filaAsignatura">
-			
-				<input type="text" id="txtTarea" onkeydown="comprobarEnterTarea(event)" placeholder="Escribe una tarea">
-				
-				<input type="number" id="txtDuracionTarea" onkeydown="comprobarEnterTarea(event)" min="1" placeholder="Minutos">
-				
-				<button id="btnAñadirTarea" class="btnAñadir">Añadir</button>
-			
+
+				<input
+					type="text"
+					id="txtTarea"
+					onkeydown="comprobarEnterTarea(event)"
+					placeholder="Escribe una tarea"
+				>
+
+				<input
+					type="number"
+					id="txtDuracionTarea"
+					onkeydown="comprobarEnterTarea(event)"
+					min="1"
+					placeholder="Minutos"
+				>
+
+				<button id="btnAñadirTarea" class="btnAñadir">
+					Añadir
+				</button>
+
 			</div>
-			
+
+
 			<div id="listaTareas"></div>
-			
-			
+
+
+
 			<!-- EXÁMENES -->
-			<h3>Examenes
+
+			<h3>
+
+				Exámenes
+
 				<div class="contenedorInfo">
-					<button class="btnInfo" data-info="examenes">ⓘ</button>
-			
+
+					<button class="btnInfo" data-info="examenes">
+						ⓘ
+					</button>
+
 					<div id="examenes" class="infoAsignaturas">
-						Escribe los examenes que tengas y su fecha
+
+						Escribe los exámenes que tengas y su fecha
+
 					</div>
+
 				</div>
-			</h3>	
-			
-			<input type="text" id="txtExamen" onkeydown="comprobarEnterExamen(event)" placeholder="Escribe una asignatura">
-			
-			<input type="date" id="txtFecha" onkeydown="comprobarEnterExamen(event)">
-			
-			<button id="btnAñadirExamen" class="btnAñadir">Añadir</button>
-			
+
+			</h3>
+
+
+			<input
+				type="text"
+				id="txtExamen"
+				onkeydown="comprobarEnterExamen(event)"
+				placeholder="Escribe una asignatura"
+			>
+
+			<input
+				type="date"
+				id="txtFecha"
+				onkeydown="comprobarEnterExamen(event)"
+			>
+
+			<button id="btnAñadirExamen" class="btnAñadir">
+				Añadir
+			</button>
+
+
 			<div id="listaExamenes"></div>
-			
-			
+
+
+
 			<!-- HORAS -->
+
 			<div class="filaConfiguracion">
-			
+
+
 				<div>
-				
-					<h3>Hora de inicio
+
+					<h3>
+
+						Hora de inicio
+
 						<div class="contenedorInfo">
-							<button class="btnInfo" data-info="inicio">ⓘ</button>
-					
+
+							<button class="btnInfo" data-info="inicio">
+								ⓘ
+							</button>
+
 							<div id="inicio" class="infoAsignaturas">
-								Escribe la hora a la que desea empezar
+
+								Escribe la hora a la que deseas empezar
+
 							</div>
+
 						</div>
+
 					</h3>
-					
-					<input type="time" id="txtHoraInicio">
-				
+
+					<input
+						type="time"
+						id="txtHoraInicio"
+					>
+
 				</div>
-				
-				
+
+
+
 				<div>
-				
-					<h3>Hora de fin
+
+					<h3>
+
+						Hora de fin
+
 						<div class="contenedorInfo">
-							<button class="btnInfo" data-info="fin">ⓘ</button>
-					
+
+							<button class="btnInfo" data-info="fin">
+								ⓘ
+							</button>
+
 							<div id="fin" class="infoAsignaturas">
-								Escribe la hora a la que desea acabar
+
+								Escribe la hora a la que deseas acabar
+
 							</div>
+
 						</div>
+
 					</h3>
-					
-					<input type="time" id="txtHoraFin">
-				
+
+					<input
+						type="time"
+						id="txtHoraFin"
+					>
+
 				</div>
-			
+
 			</div>
-			
-			
+
+
+
 			<!-- CREAR PLAN -->
+
 			<button id="btnCrearPlan" class="btnAñadir">
+
 				Crear plan de estudio
+
 			</button>
-			
-			
+
+
+
 			<!-- VOLVER AL INICIO -->
-			<button class="btnVolver" id="btnInicioEstudio">
+
+			<button
+				class="btnVolver"
+				id="btnInicioEstudio"
+			>
+
 				Volver al inicio
+
 			</button>
-			
+
 		</section>
-		
-		
-		<!-- CALCULADORA -->
+
+
+
+		<!-- ==========================================
+		     CALCULADORA
+		     ========================================== -->
+
 		<section id="Calculadora">
-					
+
 			<h2>Calculadora de nota media</h2>
-			
+
+
+			<!-- BOTÓN DE CONFIGURACIÓN -->
+
+			<button id="btnConfiguracionCalculadora">
+				⚙️
+			</button>
+
+
+
 			<!-- PANTALLA 1 -->
+
 			<div id="pantallaConfiguracion">
-					<h2>Configuración de asignaturas</h2>
+
+				<h2>Configuración de asignaturas</h2>
+
 				<div id="asignaturasGuardadas"></div>
 
+
 				<h3>Asignatura</h3>
-				<input type="text" id="txtAsignaturaConfiguracion">
+
+				<input
+					type="text"
+					id="txtAsignaturaConfiguracion"
+				>
+
+
 				<div id="divisionesGuardadas"></div>
-			
+
+
 				<h3>¿Cómo se divide la nota?</h3>
+
 				<div id="listaDivisiones">
+
 					<div class="filaDivision">
-						<input type="text" id="txtDivisionNota" class="divisionNota">
-						<input type="number" id="porcDivision" min="0" max="100">
+
+						<input
+							type="text"
+							id="txtDivisionNota"
+							class="divisionNota"
+						>
+
+						<input
+							type="number"
+							id="porcDivision"
+							min="0"
+							max="100"
+						>
+
 					</div>
+
 				</div>
-			
+
+
 				<h3>¿Algún subapartado?</h3>
+
 				<div id="listaSubapartados">
+
 					<div class="filaSubapartado">
-						<input type="text" id="txtSubapartado" class="subapartadoNota">
-						<input type="number" id="porcSubapartado" min="0" max="100">
+
+						<input
+							type="text"
+							id="txtSubapartado"
+							class="subapartadoNota"
+						>
+
+						<input
+							type="number"
+							id="porcSubapartado"
+							min="0"
+							max="100"
+						>
+
 					</div>
+
 				</div>
-						
-				<button id="btnAñadirDivisiones" class="btnAñadir">Añadir divisiones y subapartados</button>
-				<button id="btnAñadirAsignaturas" class="btnAñadir">Guardar asignatura</button>
-				<button id="btnIniciar" class="btnAñadir">Iniciar calculadora</button>
+
+
+				<button
+					id="btnAñadirDivisiones"
+					class="btnAñadir"
+				>
+
+					Añadir divisiones y subapartados
+
+				</button>
+
+
+				<button
+					id="btnAñadirAsignaturas"
+					class="btnAñadir"
+				>
+
+					Guardar asignatura
+
+				</button>
+
+
+				<button
+					id="btnIniciar"
+					class="btnAñadir"
+				>
+
+					Iniciar calculadora
+
+				</button>
+
 			</div>
-			
-			<!--PANTALLA 2 -->
+
+
+
+			<!-- PANTALLA 2 -->
+
 			<div id="pantallaCalculo">
+
 				<h2>Pantalla de cálculo</h2>
-				
+
+
 				<select id="selectAsignatura">
-					<option value="">Selecciona una asignatura</option>
+
+					<option value="">
+						Selecciona una asignatura
+					</option>
+
 				</select>
+
 
 				<div id="elementosAsignatura"></div>
 
-				<button id="btnCalcular" class="btnAñadir">
+
+				<button
+					id="btnCalcular"
+					class="btnAñadir"
+				>
+
 					Calcular
+
 				</button>
 
+
 				<label>
-					<input type="checkbox" id="chkProcedimiento">
+
+					<input
+						type="checkbox"
+						id="chkProcedimiento"
+					>
+
 					Mostrar procedimiento
+
 				</label>
+
 
 				<div id="resultadoCalculadora"></div>
 
-				<button class="btnInicio" id="btnVolverConfiguracion">
+
+				<button
+					class="btnInicio"
+					id="btnVolverConfiguracion"
+				>
+
 					Volver a configuración
+
 				</button>
-				
+
 			</div>
-			
-			<button class="btnInicio" id="btnInicioCalculadora">
+
+
+			<button
+				class="btnInicio"
+				id="btnInicioCalculadora"
+			>
+
 				Volver al inicio
+
 			</button>
-		
+
 		</section>
 
-		<!-- CALENDARIO -->
+
+
+		<!-- ==========================================
+		     CALENDARIO
+		     ========================================== -->
+
 		<section id="Calendario">
 
 			<h2>Mi calendario</h2>
-			
+
+
 			<div id="calendarioMensual">
-		
-				<!-- CABECERA DEL CALENDARIO -->
+
 				<div id="cabeceraCalendario">
-        
-					<button id="btnMesAnterior">←</button>
-            
+
+					<button id="btnMesAnterior">
+						←
+					</button>
+
 					<h3 id="mesActual"></h3>
-            
-					<button id="btnMesSiguiente">→</button>
+
+					<button id="btnMesSiguiente">
+						→
+					</button>
 
 				</div>
 
-				<!-- DÍAS DE LA SEMANA -->
+
 				<div id="diasSemana"></div>
 
-				<!-- CASILLAS DE LOS DÍAS -->
 				<div id="diasCalendario"></div>
 
 			</div>
-			
+
+
+
 			<!-- VENTANA DEL DÍA -->
+
 			<div id="ventanaDia">
 
 				<h3 id="tituloDia"></h3>
+
 				<div id="listaDia"></div>
+
+
 				<div id="botonesDia">
-					<button id="btnAñadirDia">Añadir</button>
-					<button id="btnCerrarDia">Cerrar</button>
+
+					<button id="btnAñadirDia">
+						Añadir
+					</button>
+
+					<button id="btnCerrarDia">
+						Cerrar
+					</button>
+
 				</div>
-				
-				<!-- FORMULARIO PARA AÑADIR -->
+
+
+
+				<!-- FORMULARIO DEL DÍA -->
+
 				<div id="formularioDia">
 
 					<h3>Añadir elemento</h3>
-					
-					<label for="txtElementoDia">¿Qué quieres apuntar?</label>
+
+
+					<label for="txtElementoDia">
+
+						¿Qué quieres apuntar?
+
+					</label>
+
 
 					<div id="contenedorEmoji">
 
-						<input type="text" id="txtElementoDia">
-						<button type="button" id="btnEmoji">🙂</button>
+						<input
+							type="text"
+							id="txtElementoDia"
+						>
+
+						<button
+							type="button"
+							id="btnEmoji"
+						>
+
+							🙂
+
+						</button>
 
 					</div>
+
+
 
 					<div id="menuEmojis">
 
@@ -430,32 +850,498 @@
 						<button type="button">❤️</button>
 
 					</div>
-					
-					<label for="colorElementoDia">Color del subrayado:</label>
-					<input type="color" id="colorElementoDia">
-					
-					<label for="horaInicioElemento">Hora de inicio:</label>
-					<input type="time" id="horaInicioElemento">
 
-					<label for="horaFinElemento">Hora de fin:</label>
-					<input type="time" id="horaFinElemento">
-										
-					<button id="btnGuardarElemento">Guardar</button>
-					<button id="btnCancelarElemento">Cancelar</button>
+
+
+					<label for="colorElementoDia">
+
+						Color del subrayado:
+
+					</label>
+
+					<input
+						type="color"
+						id="colorElementoDia"
+					>
+
+
+
+					<label for="horaInicioElemento">
+
+						Hora de inicio:
+
+					</label>
+
+					<input
+						type="time"
+						id="horaInicioElemento"
+					>
+
+
+
+					<label for="horaFinElemento">
+
+						Hora de fin:
+
+					</label>
+
+					<input
+						type="time"
+						id="horaFinElemento"
+					>
+
+
+
+					<button id="btnGuardarElemento">
+						Guardar
+					</button>
+
+					<button id="btnCancelarElemento">
+						Cancelar
+					</button>
 
 				</div>
 
 			</div>
 
-			<!-- VOLVER AL INICIO -->
-			<button class="btnVolver" id="btnInicioCalendario">
+
+
+			<button
+				class="btnVolver"
+				id="btnInicioCalendario"
+			>
+
 				Volver al inicio
+
 			</button>
 
 		</section>
-	
+
+
+
+		<!-- ==========================================
+		     BLOC DE NOTAS
+		     ========================================== -->
+
+		<section
+			id="blocNotas"
+			style="display: none;"
+		>
+
+			<h2>Mis notas</h2>
+
+
+			<div id="contenedorNotas">
+			</div>
+
+
+
+			<div id="botonesNotas">
+
+				<button id="btnNuevaNota">
+					📝
+				</button>
+
+
+				<button
+					class="btnVolver"
+					id="btnInicioBlocNotas"
+				>
+
+					Volver al inicio
+
+				</button>
+
+			</div>
+
+
+
+			<!-- ==========================================
+			     CONFIGURACIÓN DE LA NOTA
+			     ========================================== -->
+
+			<div
+				id="configuracionNota"
+				style="display: none;"
+			>
+
+				<h3>Configurar nueva nota</h3>
+
+
+				<label for="txtTituloNota">
+
+					Título de la nota:
+
+				</label>
+
+
+				<input
+					type="text"
+					id="txtTituloNota"
+					placeholder="Escribe el título"
+				>
+
+
+
+				<!-- PORTADA -->
+
+				<div id="opcionPortada">
+
+					<button id="btnAnadirPortada">
+
+						➕ Añadir portada
+
+					</button>
+
+				</div>
+
+
+
+				<!-- SELECTOR DE PORTADAS -->
+
+				<div
+					id="selectorPortadas"
+					style="display: none;"
+				>
+
+					<h3>Elige una portada</h3>
+
+
+					<button id="btnUnColor">
+
+						🎨 Un color
+
+					</button>
+
+
+					<button id="btnDosColores">
+
+						🌈 Dos colores
+
+					</button>
+
+
+					<button id="btnDibujos">
+
+						🖼️ Dibujos
+
+					</button>
+
+
+					<button id="btnPersonalizar">
+
+						📷 Personalizar
+
+					</button>
+
+
+					<button id="btnSinPortada">
+
+						❌ Sin portada
+
+					</button>
+
+				</div>
+
+
+
+				<!-- ESTILO DE LA NOTA -->
+
+				<div id="opcionEstilo">
+
+					<h3>Estilo de la nota</h3>
+
+
+					<button id="btnEstiloClasico">
+
+						📒 Clásico
+
+					</button>
+
+
+					<button id="btnEstiloRayas">
+
+						📓 Rayas
+
+					</button>
+
+
+					<button id="btnEstiloCuadros">
+
+						📝 Cuadros
+
+					</button>
+
+
+					<button id="btnEstiloPuntos">
+
+						🔵 Puntos
+
+					</button>
+
+				</div>
+
+
+
+				<!-- VISTA PREVIA -->
+
+				<div id="vistaPreviaEstilo">
+
+					<h3>Vista previa</h3>
+
+
+					<div id="cuadernoPrevia">
+
+						Así se verá tu nota
+
+					</div>
+
+				</div>
+
+
+
+				<!-- BOTONES DE CONFIGURACIÓN -->
+
+				<div id="botonesConfiguracionNota">
+
+					<button id="btnGuardarNota">
+
+						💾 Guardar
+
+					</button>
+
+
+					<button id="btnCancelarNota">
+
+						❌ Cancelar
+
+					</button>
+
+				</div>
+
+			</div>
+
+
+
+			<!-- ==========================================
+			     NOTA INDIVIDUAL
+			     ========================================== -->
+
+			<div
+				id="notaIndividual"
+				style="display: none;"
+			>
+
+				<div id="cabeceraNota">
+
+					<h2 id="tituloNotaIndividual"></h2>
+
+
+					<button id="btnCambiarTitulo">
+
+						✏️
+
+					</button>
+
+
+					<button id="btnCambiarPortada">
+
+						🎨
+
+					</button>
+					
+					<button id="btnCambiarEstilo">
+						📒
+					</button>
+
+
+					<button id="btnCerrarNota">
+
+						← Volver a mis notas
+
+					</button>
+
+				</div>
+
+
+
+				<!-- HERRAMIENTAS DE TEXTO -->
+
+				<div id="herramientasTexto">
+
+					<button id="btnNegrita">
+						<b>B</b>
+					</button>
+
+					<button id="btnCursiva">
+						<i>I</i>
+					</button>
+
+					<button id="btnSubrayado">
+						<u>U</u>
+					</button>
+
+
+					<select id="tamanoTexto">
+
+						<option value="2">
+							Pequeño
+						</option>
+
+						<option value="3" selected>
+							Normal
+						</option>
+
+						<option value="4">
+							Grande
+						</option>
+
+						<option value="5">
+							Muy grande
+						</option>
+
+					</select>
+
+
+					<select id="tipoTexto">
+
+						<option value="Arial">
+							Arial
+						</option>
+
+						<option value="Georgia">
+							Georgia
+						</option>
+
+						<option value="Courier New">
+							Courier New
+						</option>
+
+						<option value="Times New Roman">
+							Times New Roman
+						</option>
+
+					</select>
+
+
+					<input
+						type="color"
+						id="colorTexto"
+					>
+
+
+					<button id="btnIzquierda">
+						⬅️
+					</button>
+
+					<button id="btnCentro">
+						↔️
+					</button>
+
+					<button id="btnDerecha">
+						➡️
+					</button>
+
+
+					<button id="btnLista">
+						☷ Lista
+					</button>
+
+				</div>
+
+
+
+				<!-- HERRAMIENTAS DE ELEMENTOS -->
+
+				<div id="herramientasElementos">
+
+					<button id="btnAnadirElemento">
+
+						➕ Añadir elemento
+
+					</button>
+
+
+					<div
+						id="menuElementos"
+						style="display: none;"
+					>
+
+						<button id="btnAnadirImagen">
+
+							🖼️ Imagen
+
+						</button>
+
+
+						<button id="btnAnadirEscritura">
+
+							✍️ Escritura a mano
+
+						</button>
+
+					</div>
+
+				</div>
+
+
+
+				<!-- HOJAS DE LA NOTA -->
+
+				<div id="hojasNota">
+
+					<div
+						class="hojaNota"
+						contenteditable="true"
+						id="hojaActual"
+					>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!-- SELECTOR PARA CAMBIAR EL ESTILO DE UNA NOTA -->
+			<div id="selectorEstiloNota" style="display: none;">
+
+			<h3>Elige el estilo</h3>
+
+			<button id="btnCambiarEstiloClasico">
+				📒 Clásico
+			</button>
+
+			<button id="btnCambiarEstiloRayas">
+				📓 Rayas
+			</button>
+
+			<button id="btnCambiarEstiloCuadros">
+				📝 Cuadros
+			</button>
+
+			<button id="btnCambiarEstiloPuntos">
+				🔵 Puntos
+			</button>
+
+			<button id="btnCerrarSelectorEstilo">
+				❌ Cancelar
+			</button>
+
+		</div>
+
+		</section>
+
 	</main>
-	
+
+
+
+	<!-- ==========================================
+	     SCRIPTS
+	     ========================================== -->
+
+	<script src="planEstudio.js"></script>
+	<script src="calculadora.js"></script>
+	<script src="calendario.js"></script>
+	<script src="blocNotas.js"></script>
 	<script src="script.js"></script>
 
 </body>
