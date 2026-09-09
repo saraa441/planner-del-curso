@@ -1,0 +1,79 @@
+/* ==========================================
+   PLAN DE ESTUDIO
+   ========================================== */
+
+/* Se hace que el recuadro de texto y el botón estén en la misma fila */
+.filaAsignatura{
+	display: flex;
+	gap: 35px;
+}
+
+/* Se colocan dos configuraciones una al lado de la otra */
+.filaConfiguracion{
+	display: flex;
+	justify-content: flex-start;
+	gap: 20px;
+}
+
+/* Se hace que las listas tengan una X al lado */
+.filaLista{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid black;
+}
+
+/* Se crea un cuadro para guardar la asignatura */
+.bloqueEstudio{
+	border: 1px solid black;
+	padding: 5px;
+	background-color: #D8B4E2;
+}
+
+/* Se crea un cuadro para guardar el descanso */
+.bloqueDescanso{
+	border: 1px solid black;
+	padding: 5px;
+	background-color: #FFF2B2;
+}
+
+/* Se crea un cuadro para guardar la tarea */
+.bloqueTarea{
+	border: 1px solid black;
+	padding: 5px;
+	background-color: #B7E4C7;
+}
+
+/* Opciones de configuración */
+.opcionConfiguracion{
+	display: flex;
+	justify-content: flex-start;
+	gap: 20px;
+	align-items: center;
+	margin-bottom: 15px;
+}
+
+/* Se hace un recuadro para las listas */
+#listaAsignaturas{
+	border: 1px solid black;
+	margin-top: 10px;
+}
+
+#listaTareas{
+	border: 1px solid black;
+	margin-top: 10px;
+}
+
+#listaExamenes{
+	border: 1px solid black;
+	margin-top: 10px;
+}
+
+/* Asignaturas guardadas */
+#asignaturasGuardadas .filaAsignatura{
+	background-color: #f2f2f2;
+	padding: 10px;
+	margin-top: 10px;
+	border-radius: 10px;
+	align-items: center;
+	justify-content: space-between;
+}

@@ -1,0 +1,12 @@
+/* ==========================================
+   CALCULADORA
+   ========================================== */
+
+/* Pantallas de la calculadora */
+#pantallaConfiguracion{
+	display: block;
+}
+
+#pantallaCalculo{
+	display: none;
+}
